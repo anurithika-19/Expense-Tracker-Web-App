@@ -3,30 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Expense Tracker - Home</title>
+  <title>Smart Expense Tracker - Welcome</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="front">
-  <div class="front-page">
-    <header>
-      <h1>💰 Smart Expense Tracker</h1>
-      <p>Track your daily, weekly, and monthly expenses with insights, savings tips, and dynamic charts.</p>
+<body class="landing-body">
+  <div class="landing-container">
+    
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="app-badge"><i class="fa-solid fa-wallet"></i> Personal Finance System</div>
+      <h1>Smart Expense Tracker</h1>
+      <p class="hero-subtitle">
+        Take complete control of your financial freedom. Track daily spending, analyze category trends, and optimize your monthly savings with real-time analytics.
+      </p>
     </header>
 
-    <section class="features">
-      <h2>Features</h2>
-      <ul>
-        <li>📊 Daily / Weekly / Monthly filters</li>
-        <li>🔥 Expense Visualizations & Analytics</li>
-        <li>💡 Smart Insights – average spending & savings analysis</li>
-        <li>🔍 Search & Filter expenses instantly</li>
-        <li>📑 Export transaction data to CSV / Spreadsheets</li>
-      </ul>
+    <!-- Prominent Action Call -->
+    <div class="hero-cta">
+      <button class="btn-hero-cta" onclick="location.href='tracker.html'">
+        🚀 Launch Expense Tracker <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      <span class="cta-note">Instant browser storage • No registration required</span>
+    </div>
+
+    <!-- Feature Grid Highlights -->
+    <section class="info-grid">
+      <div class="info-card">
+        <div class="card-icon cyan"><i class="fa-solid fa-filter"></i></div>
+        <h3>Dynamic Filters</h3>
+        <p>Effortlessly organize and review transactions with daily, weekly, and monthly view modes.</p>
+      </div>
+
+      <div class="info-card purple">
+        <div class="card-icon purple"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Visual Analytics</h3>
+        <p>Interactive doughnut charts and daily heatmaps give immediate visual feedback on spending habits[cite: 3].</p>
+      </div>
+
+      <div class="info-card amber">
+        <div class="card-icon amber"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Smart Insights</h3>
+        <p>Calculates your highest expense category, average spending per entry, and remaining budget savings[cite: 3].</p>
+      </div>
+
+      <div class="info-card green">
+        <div class="card-icon green"><i class="fa-solid fa-file-csv"></i></div>
+        <h3>Instant Export</h3>
+        <p>Download full transaction reports directly into CSV or Excel spreadsheet formats with one click[cite: 3].</p>
+      </div>
     </section>
 
-    <section class="cta">
-      <button class="action-btn" onclick="location.href='tracker.html'">🚀 Open Tracker</button>
-    </section>
   </div>
 </body>
 </html>
