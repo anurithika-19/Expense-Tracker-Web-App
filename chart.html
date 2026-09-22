@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expense Analytics & Insights</title>
+  <title>Smart Expense Tracker - Analytics</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>📊 Expense Insights & Charts</h1>
+    <h1>📊 Spending Analytics & Insights</h1>
+    <p class="subtitle">Visual representation of your financial category breakdown and daily totals.</p>
 
-    <!-- Key Metrics / Insights -->
+    <!-- Stat Metrics -->
     <div class="insights">
-      <div class="insight-box">
+      <div class="insight-box purple">
         <h3>Average Expense</h3>
         <p>$<span id="avg-expense">0.00</span></p>
       </div>
-      <div class="insight-box">
+      <div class="insight-box amber">
         <h3>Highest Category</h3>
         <p><span id="highest-category">None</span></p>
       </div>
-      <div class="insight-box">
-        <h3>Savings (Budget $2000)</h3>
+      <div class="insight-box pink">
+        <h3>Remaining Savings</h3>
         <p>$<span id="savings">2000.00</span></p>
       </div>
     </div>
 
-    <!-- Charts -->
-    <div class="charts">
-      <div class="chart">
+    <!-- Dynamic Charts Grid -->
+    <div class="charts-grid">
+      <div class="chart-card">
         <h2>Category Distribution</h2>
         <canvas id="expenseChart"></canvas>
       </div>
-      <div class="chart">
+      <div class="chart-card">
         <h2>Daily Spending Breakdown</h2>
         <canvas id="heatmapChart"></canvas>
       </div>
     </div>
     
     <!-- Navigation -->
-    <div style="text-align:center; margin-top:30px;">
-      <button class="action-btn" onclick="location.href='tracker.html'">⬅ Back to Tracker</button>
+    <div style="text-align:center; margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center;">
+      <button class="action-btn btn-primary" onclick="location.href='tracker.html'">⬅ Back to Tracker</button>
+      <button class="action-btn" onclick="location.href='index.html'">🏠 Home</button>
     </div>
+
   </div>
 
   <script src="script.js"></script>
