@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Analytics & Insights</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Expense Insights & Charts</h1>
+
+    <!-- Key Metrics / Insights -->
+    <div class="insights">
+      <div class="insight-box">
+        <h3>Average Expense</h3>
+        <p>$<span id="avg-expense">0.00</span></p>
+      </div>
+      <div class="insight-box">
+        <h3>Highest Category</h3>
+        <p><span id="highest-category">None</span></p>
+      </div>
+      <div class="insight-box">
+        <h3>Savings (Budget $2000)</h3>
+        <p>$<span id="savings">2000.00</span></p>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="charts">
+      <div class="chart">
+        <h2>Category Distribution</h2>
+        <canvas id="expenseChart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Daily Spending Breakdown</h2>
+        <canvas id="heatmapChart"></canvas>
+      </div>
+    </div>
+    
+    <!-- Navigation -->
+    <div style="text-align:center; margin-top:30px;">
+      <button class="action-btn" onclick="location.href='tracker.html'">⬅ Back to Tracker</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
