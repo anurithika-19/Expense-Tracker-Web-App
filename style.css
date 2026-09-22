@@ -1,29 +1,90 @@
 /* =========================================================
-   🌟 Centered Hero Landing Page Styles
+   🌟 Master Glassmorphism & Dark Theme (All Pages)
    ========================================================= */
-body.landing-body {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --glass-bg: rgba(30, 41, 59, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.12);
+  
+  --primary: #6366f1;
+  --primary-glow: rgba(99, 102, 241, 0.4);
+  --accent-cyan: #06b6d4;
+  --accent-pink: #ec4899;
+  --accent-green: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem 1rem;
 }
 
-.landing-container {
-  max-width: 900px;
+/* Base Glass Container */
+.container {
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  text-align: center;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
   border-radius: 28px;
-  padding: 3.5rem 2.5rem;
+  padding: 3rem 2.5rem;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 0.8s ease-out;
+  animation: fadeIn 0.6s ease-out;
 }
 
+/* Main Gradient Titles */
+h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #818cf8, #c084fc, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+/* Header Subtitle text */
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 650px;
+  margin: -1rem auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   🏠 Page 1: Landing Page (index.html)
+   ========================================================= */
 .app-badge {
   display: inline-flex;
   align-items: center;
@@ -38,28 +99,12 @@ body.landing-body {
   margin-bottom: 1.5rem;
 }
 
-.hero-header h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto 2.5rem auto;
-}
-
-/* Big Central CTA Button */
 .hero-cta {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .btn-hero-cta {
@@ -76,6 +121,7 @@ body.landing-body {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
+  text-decoration: none;
 }
 
 .btn-hero-cta:hover {
@@ -88,7 +134,6 @@ body.landing-body {
   color: var(--text-muted);
 }
 
-/* Feature Grid */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -135,4 +180,200 @@ body.landing-body {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.5;
+}
+
+/* =========================================================
+   📊 Dashboard & Analytics Metrics (tracker.html & chart.html)
+   ========================================================= */
+.dashboard-metrics, .insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.metric-card, .insight-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.metric-card:hover, .insight-box:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.metric-card h3, .insight-box h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.metric-card .value, .insight-box p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.metric-card.purple, .insight-box.purple { border-top: 4px solid var(--primary); }
+.metric-card.green, .insight-box.green { border-top: 4px solid var(--accent-green); }
+.metric-card.amber, .insight-box.amber { border-top: 4px solid var(--accent-amber); }
+.metric-card.pink, .insight-box.pink { border-top: 4px solid var(--accent-pink); }
+
+/* Form inputs & controls */
+#expense-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+  gap: 1rem;
+  background: rgba(15, 23, 42, 0.4);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 2rem;
+}
+
+input, select {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.filters, .filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+/* Button Classes */
+.action-btn, .btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.action-btn:hover, .btn:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+  box-shadow: 0 4px 15px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+}
+
+/* Table Styling */
+.expense-table, .table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.5);
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+th {
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-food { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+.badge-travel { background: rgba(6, 182, 212, 0.2); color: #22d3ee; }
+.badge-bills { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.badge-shopping { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+.badge-others { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.btn-icon:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Charts Layout */
+.charts, .charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.chart, .chart-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+canvas {
+  max-width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
