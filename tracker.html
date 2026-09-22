@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Expense Tracker</title>
+  <title>Analytics Dashboard - Smart Expense Tracker</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>💰 Smart Expense Tracker</h1>
+    <h1>✨ Expense Analytics Dashboard</h1>
 
-    <!-- Add Expense Form -->
+    <!-- 📊 Dashboard Metric Cards -->
+    <div class="dashboard-metrics">
+      <div class="metric-card purple">
+        <h3>Total Spent</h3>
+        <div class="value">$<span id="total-amount">0.00</span></div>
+      </div>
+      <div class="metric-card green">
+        <h3>Average / Entry</h3>
+        <div class="value">$<span id="avg-expense">0.00</span></div>
+      </div>
+      <div class="metric-card amber">
+        <h3>Highest Category</h3>
+        <div class="value" id="highest-category">None</div>
+      </div>
+      <div class="metric-card pink">
+        <h3>Budget Savings</h3>
+        <div class="value">$<span id="savings">2000.00</span></div>
+      </div>
+    </div>
+
+    <!-- ➕ Form Input -->
     <form id="expense-form">
-      <input type="text" id="expense-name" placeholder="Expense Name" required>
-      <input type="number" id="expense-amount" placeholder="Amount" step="0.01" required>
+      <input type="text" id="expense-name" placeholder="Expense Title" required>
+      <input type="number" id="expense-amount" placeholder="Amount ($)" step="0.01" required>
       <select id="expense-category" required>
         <option value="Food">Food</option>
         <option value="Travel">Travel</option>
@@ -22,11 +43,12 @@
         <option value="Others">Others</option>
       </select>
       <input type="date" id="expense-date" required>
-      <button type="submit">Add Expense</button>
+      <button type="submit" class="btn btn-primary">➕ Add Expense</button>
     </form>
 
-    <!-- Filters -->
-    <div class="filters">
+    <!-- 🔍 Search and Filters -->
+    <div class="filters-bar">
+      <input type="text" id="search-box" placeholder="🔍 Search records..." style="flex: 1;">
       <select id="filter-category">
         <option value="All">All Categories</option>
         <option value="Food">Food</option>
@@ -41,31 +63,35 @@
         <option value="weekly">This Week</option>
         <option value="monthly">This Month</option>
       </select>
-      <input type="text" id="search-box" placeholder="Search expenses...">
+      <button class="btn btn-action" id="export-btn">📑 Export CSV</button>
     </div>
 
-    <!-- Expense Table -->
-    <div class="expense-table">
+    <!-- 📋 Table View -->
+    <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Expense Name</th>
             <th>Amount</th>
             <th>Category</th>
             <th>Date</th>
-            <th>Actions</th>
+            <th style="text-align: center;">Actions</th>
           </tr>
         </thead>
         <tbody id="expense-list"></tbody>
       </table>
     </div>
 
-    <!-- Total & Actions -->
-    <div class="total-amount">Total: $<span id="total-amount">0.00</span></div>
-    <div style="text-align:center; margin-top:20px;">
-      <button class="action-btn" id="export-btn">📑 Export to CSV</button>
-      <button class="action-btn" onclick="location.href='chart.html'">📊 View Charts</button>
-      <button class="action-btn" onclick="location.href='index.html'">🏠 Home</button>
+    <!-- 📈 Dynamic Charts Grid -->
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h2>Category Distribution</h2>
+        <canvas id="expenseChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h2>Daily Spending Breakdown</h2>
+        <canvas id="heatmapChart"></canvas>
+      </div>
     </div>
   </div>
 
