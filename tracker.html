@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analytics Dashboard - Smart Expense Tracker</title>
+  <title>Smart Expense Tracker - Tracker</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>✨ Expense Analytics Dashboard</h1>
+    <h1>💳 Expense Tracker</h1>
+    <p class="subtitle">Log daily expenses, filter transactions, and export reports.</p>
 
-    <!-- 📊 Dashboard Metric Cards -->
+    <!-- Stat Metrics -->
     <div class="dashboard-metrics">
       <div class="metric-card purple">
         <h3>Total Spent</h3>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <!-- ➕ Form Input -->
+    <!-- Input Form -->
     <form id="expense-form">
       <input type="text" id="expense-name" placeholder="Expense Title" required>
       <input type="number" id="expense-amount" placeholder="Amount ($)" step="0.01" required>
@@ -43,10 +43,10 @@
         <option value="Others">Others</option>
       </select>
       <input type="date" id="expense-date" required>
-      <button type="submit" class="btn btn-primary">➕ Add Expense</button>
+      <button type="submit" class="action-btn btn-primary">➕ Add Expense</button>
     </form>
 
-    <!-- 🔍 Search and Filters -->
+    <!-- Filters & Search Bar -->
     <div class="filters-bar">
       <input type="text" id="search-box" placeholder="🔍 Search records..." style="flex: 1;">
       <select id="filter-category">
@@ -63,10 +63,9 @@
         <option value="weekly">This Week</option>
         <option value="monthly">This Month</option>
       </select>
-      <button class="btn btn-action" id="export-btn">📑 Export CSV</button>
     </div>
 
-    <!-- 📋 Table View -->
+    <!-- Expense Table -->
     <div class="table-wrapper">
       <table>
         <thead>
@@ -82,17 +81,13 @@
       </table>
     </div>
 
-    <!-- 📈 Dynamic Charts Grid -->
-    <div class="charts-grid">
-      <div class="chart-card">
-        <h2>Category Distribution</h2>
-        <canvas id="expenseChart"></canvas>
-      </div>
-      <div class="chart-card">
-        <h2>Daily Spending Breakdown</h2>
-        <canvas id="heatmapChart"></canvas>
-      </div>
+    <!-- Page Actions -->
+    <div style="text-align: center; margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+      <button class="action-btn" id="export-btn">📑 Export CSV</button>
+      <button class="action-btn btn-primary" onclick="location.href='chart.html'">📊 View Charts</button>
+      <button class="action-btn" onclick="location.href='index.html'">🏠 Home</button>
     </div>
+
   </div>
 
   <script src="script.js"></script>
